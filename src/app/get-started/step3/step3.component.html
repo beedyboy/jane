@@ -1,0 +1,57 @@
+<section id="thirdForm" [formGroup]="regForm">
+  <mat-card>
+    <mat-card-content formGroupName="thirdForm" fxLayout="column" fxLayout.sm="column" fxLayoutWrap
+      fxLayoutAlign="center" fxLayoutGap="20px">
+
+      <section class="example-section" fxLayout="column" fxLayout.sm="column" fxLayoutWrap
+        fxLayoutAlign="center" fxLayoutGap="20px">
+        <label>Check all that applies</label>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <mat-radio-group formControlName="tingling" name="tingling" fxLayout="column" fxLayoutGap=".25rem">
+            <mat-radio-button value="Sharp">Sharp</mat-radio-button>
+            <mat-radio-button value="Weak">Weak</mat-radio-button>
+          </mat-radio-group>
+          <mat-radio-group formControlName="swelling" name="swelling" fxLayout="column" fxLayoutGap=".25rem">
+            <mat-radio-button value="numbness">Numbness</mat-radio-button>
+            <mat-radio-button value="stiffness">Stiffness</mat-radio-button>
+          </mat-radio-group>
+          <mat-radio-group formControlName="redburning" name="redburning" fxLayout="column" fxLayoutGap=".25rem">
+            <mat-radio-button value="spasms">Spasms</mat-radio-button>
+            <mat-radio-button value="dull">Dull</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </section>
+
+      <section>
+        <label>Do it improve as the day goes on?</label>
+        <mat-radio-group formControlName="improves" name="improves" fxLayout="row" fxLayoutGap=".25rem">
+          <mat-radio-button value="Better">Better</mat-radio-button>
+          <mat-radio-button value="Worst">Worst</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section>
+        <label>Does activity change the pain?</label>
+        <mat-radio-group formControlName="activity" name="activity" fxLayout="row" fxLayoutGap=".25rem">
+          <mat-radio-button value="Yes">Yes</mat-radio-button>
+          <mat-radio-button value="No">No</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section fxLayout="column" fxLayoutGap=".25rem">
+        <label>Rate your pain</label>
+        <mat-slider thumbLabel tickInterval="1000" formControlName="ratepain" min="1"
+          max="100"></mat-slider>
+      </section>
+      <span>
+        {{regForm.get('thirdForm').get('ratepain').value}}
+      </span>
+
+      <mat-card-actions align="end">
+        <!-- <button mat-button matStepperPrevious>Back</button> -->
+        <button type="button" mat-raised-button color="primary" (click)="setUp()">Next</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+</section>

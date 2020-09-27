@@ -1,0 +1,74 @@
+<h3>User Data</h3>
+
+<div fxLayout="row" fxLayoutGap="2px " fxLayoutAlign="space-between center">
+  <div class="flex-item"> <input matInput (keyup)="filter($event)" placeholder="Search Record"> </div>
+
+
+</div>
+
+
+<div  *mobxAutorun="{ dontDetach: true}" fxLayout="column wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px grid" fxLayoutWrap
+  fxLayoutAlign="space-around">
+
+  <div>
+    <mat-spinner *ngIf="isLoadingResult"></mat-spinner>
+  </div>
+
+  <div fxFlex="100%">
+
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id. </th>
+          <td mat-cell *matCellDef="let element;"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="dob">
+          <th mat-header-cell *matHeaderCellDef> DOB </th>
+          <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smoke">
+          <th mat-header-cell *matHeaderCellDef> Smoke </th>
+          <td mat-cell *matCellDef="let element"> {{element.smoke}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fracture">
+          <th mat-header-cell *matHeaderCellDef> Fracture </th>
+          <td mat-cell *matCellDef="let element"> {{element.fracture}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let row;">
+
+          <button mat-raised-button color="accent" (click)="viewDetails(row.id)">View</button>
+           </td>
+    </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="no-result" [style.display]="dataLength == 0 ? '' : 'none'">
+        No results
+      </div>
+      <mat-paginator [length]="dataLength" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons>
+      </mat-paginator>
+    </div>
+
+  </div>
+
+
+</div>

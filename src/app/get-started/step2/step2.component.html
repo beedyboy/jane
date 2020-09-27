@@ -1,0 +1,55 @@
+<section id="secondForm" [formGroup]="regForm">
+  <mat-card>
+      <mat-card-content formGroupName="secondForm" fxLayout="column"
+      fxLayout.sm="column" fxLayoutWrap fxLayoutAlign="center" fxLayoutGap="20px">
+
+      <section class="example-section" formGroupName="disease" fxLayout="column"
+      fxLayout.sm="column" fxLayoutWrap fxLayoutAlign="center" fxLayoutGap="20px">
+      <label>Check all that applies</label>
+        <mat-checkbox  formControlName="depression" name="disease">Depression</mat-checkbox>
+        <mat-checkbox  formControlName="diabetes" name="disease">Diabetes</mat-checkbox>
+        <mat-checkbox  formControlName="neckpain" name="disease">Neck Pain</mat-checkbox>
+        <mat-checkbox  formControlName="epilepsy" name="disease">Epilepsy</mat-checkbox>
+        <mat-checkbox  formControlName="skinburn" name="disease">Skin burn</mat-checkbox>
+        <mat-checkbox  formControlName="bp" name="disease">Bp</mat-checkbox>
+      </section>
+
+      <section>
+        <label>Do you have fracture</label>
+        <mat-radio-group formControlName="fracture" name="fracture" fxLayout="row" fxLayoutGap=".25rem">
+          <mat-radio-button value="Yes">Yes</mat-radio-button>
+          <mat-radio-button value="No">No</mat-radio-button>
+        </mat-radio-group>
+
+    </section>
+    <section>
+      <mat-button-toggle-group  formControlName="duration" name="duration"  aria-label="Font Style">
+        <mat-button-toggle value="6">0-6 month</mat-button-toggle>
+        <mat-button-toggle value="7">7 month - 1yr</mat-button-toggle>
+        <mat-button-toggle value="1">> 1year</mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+
+      <!-- <section>
+        <label>Smoke</label>
+        <mat-radio-group formControlName="disease" name="disease" fxLayout="row" fxLayoutGap=".25rem">
+          <mat-radio-button value="Yes">Yes</mat-radio-button>
+          <mat-radio-button value="No">No</mat-radio-button>
+        </mat-radio-group>
+        tingling: new FormControl(null),
+        swelling: new FormControl(null),
+        redburning: new FormControl(null),
+    </section> -->
+
+         <!-- <mat-form-field>
+             <mat-label>Address</mat-label>
+             <textarea matInput  formControlName="address" name="address"></textarea>
+                       </mat-form-field> -->
+
+         <mat-card-actions align="end">
+             <button type="button"  mat-raised-button  color="primary" matStepperNext (click)="submitStep2()">Next</button>
+         </mat-card-actions>
+      </mat-card-content>
+  </mat-card>
+
+</section>

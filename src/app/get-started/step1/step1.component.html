@@ -1,0 +1,52 @@
+<div id="company-details" [formGroup]="regForm" >
+  <mat-card>
+      <mat-card-content formGroupName="firstForm"  fxLayout="column"
+      fxLayout.sm="column" fxLayoutWrap fxLayoutAlign="center" fxLayoutGap="20px">
+
+         <mat-form-field>
+          <mat-label>DOB</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+         <div>
+             <label>Gender</label>
+             <mat-radio-group formControlName="gender" name="gender" fxLayout="row" fxLayoutGap=".25rem">
+               <mat-radio-button value="Male">Male</mat-radio-button>
+               <mat-radio-button value="Female">Female</mat-radio-button>
+             </mat-radio-group>
+
+             <mat-error *ngIf="regForm.get('firstForm').get('gender').invalid
+             && regForm.get('firstForm').get('gender').touched">Gender field cannot be empty</mat-error>
+         </div>
+
+         <div *ngIf="regForm.get('firstForm').get('gender').value == 'Female'" fxLayout="column" fxLayoutGap=".50rem">
+          <label>Pregnant</label>
+          <mat-radio-group formControlName="pregnant" name="pregnant" fxLayout="row" fxLayoutGap=".25rem">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button value="No">No</mat-radio-button>
+          </mat-radio-group>
+
+        <label>Breast feeding</label>
+        <mat-radio-group formControlName="breastfeeding" name="breastfeeding" fxLayout="row" fxLayoutGap=".25rem">
+          <mat-radio-button value="Yes">Yes</mat-radio-button>
+          <mat-radio-button value="No">No</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div>
+      <label>Smoke</label>
+      <mat-radio-group formControlName="smoke" name="smoke" fxLayout="row" fxLayoutGap=".25rem">
+        <mat-radio-button value="Yes">Yes</mat-radio-button>
+        <mat-radio-button value="No">No</mat-radio-button>
+      </mat-radio-group>
+  </div>
+         <mat-card-actions align="end">
+             <button type="button"  mat-raised-button  color="primary" matStepperNext (click)="submitStep1()">Next</button>
+         </mat-card-actions>
+      </mat-card-content>
+  </mat-card>
+
+</div>
