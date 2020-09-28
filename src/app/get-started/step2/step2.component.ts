@@ -12,12 +12,5 @@ export class Step2Component implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  submitStep2(): void {
-    this.regForm.get('firstForm').get('companyEmail').markAsTouched();
-    this.regForm.get('firstForm').get('companyEmail').updateValueAndValidity();
-
-    console.log(this.regForm);
-  }
+ 
 }
