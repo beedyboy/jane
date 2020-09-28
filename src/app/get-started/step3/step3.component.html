@@ -49,7 +49,7 @@
 
       <mat-card-actions align="end">
         <!-- <button mat-button matStepperPrevious>Back</button> -->
-        <button type="button" disabled=[sending] mat-raised-button color="primary" (click)="setUp()">Submit</button>
+        <button type="button" [disabled]="sending" mat-raised-button color="primary" (click)="setUp()">Submit</button>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>
