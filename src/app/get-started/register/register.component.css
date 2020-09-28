@@ -1,5 +1,18 @@
 .container{
   margin: 15px;
   height:200px;
+  background-color: azure;
   border:2px solid blueviolet;
  }
+
+
+footer {
+  background-color: blueviolet;
+  color: azure;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+}
+
