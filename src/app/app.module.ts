@@ -21,6 +21,7 @@ import { MobxAngularModule } from 'mobx-angular';
 import { RegisterService } from '../services/register.service';
 import { RecordsComponent } from './admin/records/records.component';
 import { RecordDetailsComponent } from './admin/record-details/record-details.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RecordDetailsComponent } from './admin/record-details/record-details.co
     RegisterComponent,
     Step3Component,
     RecordsComponent,
-    RecordDetailsComponent
+    RecordDetailsComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

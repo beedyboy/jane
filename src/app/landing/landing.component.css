@@ -1,10 +1,15 @@
-/* img {
-  height: 80px;
-  width: 100%;
-} */
-body {
-  background: #856785;
-}
+
 .container {
   height: 100vh;
+  background-color: azure;
 }
+footer {
+  background-color: blueviolet;
+  color: azure;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+}
+

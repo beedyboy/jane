@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  background-color: azure;
+}
+.section { 
+  min-height: 50px;
+  height: auto;
+  margin: 8px;
+}
+.badge {
+  padding: 2px;
+  margin: 8px;
+  background-color: blueviolet;
+  color: azure;
+  font-weight: 400;
+  font-size: 14px;
+}
+.text-muted {
+  padding: 3px;
+  margin: 5px;
+  font-size: 14px;
+}
+footer {
+  background-color: blueviolet;
+  color: azure;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+}

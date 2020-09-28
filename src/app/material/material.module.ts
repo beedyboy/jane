@@ -23,6 +23,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -42,6 +43,7 @@ const MaterialComponents = [
   MatTableModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
+  MatSnackBarModule,
   MatDatepickerModule,
   MatStepperModule,
   MatDialogModule,

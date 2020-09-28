@@ -13,22 +13,21 @@ export class RecordDetailsComponent implements OnInit {
   recordId = '';
   isLoadingResult = true;
   myData: any = [];
-  id: number = null;
-  gender = null;
-  dob = null;
-  pregnant = null;
-  breastfeeding = null;
-  smoke = null;
-  fracture = null;
-  disease = null;
-  duration = null;
-  activity = null;
-  improve = null;
-  tingling = null;
-  swelling = null;
-  redburning = null;
-  ratepain = null;
-  created_at = null;
+  gender = 'Not available';
+  dob = 'Not available';
+  pregnant = 'Not available';
+  breastfeeding = 'Not available';
+  smoke = 'Not available';
+  fracture = 'Not available';
+  disease: any = [];
+  duration = 'Not available';
+  activity = 'Not available';
+  improve = 'Not available';
+  tingling = 'Not available';
+  swelling = 'Not available';
+  redburning = 'Not available';
+  ratepain = 'Not available';
+  created_at = 'Not available';
 
   constructor(private route: ActivatedRoute, private service: RegisterService) { }
 
@@ -38,28 +37,27 @@ export class RecordDetailsComponent implements OnInit {
     this.loadDetails(id);
   }
 
-
   // tslint:disable-next-line: typedef
   loadDetails(id) {
     // tslint:disable-next-line: radix
     this.service.getRecordById(id)
       .subscribe((result) => {
         this.isLoadingResult = false;
-        this.gender = result.gender;
-        this.dob = result.dob;
-        this.pregnant = result.pregnant;
-        this.breastfeeding = result.breastfeeding;
-        this.smoke = result.smoke;
-        this.fracture = result.fracture;
+        this.gender = result.gender || 'Not available';
+        this.dob = result.dob || 'Not available';
+        this.pregnant = result.pregnant || 'Not available';
+        this.breastfeeding = result.breastfeeding || 'Not available';
+        this.smoke = result.smoke || 'Not available';
+        this.fracture = result.fracture || 'Not available';
         this.disease = JSON.parse(result.disease);
-        this.duration = result.duration;
-        this.activity = result.activity;
-        this.improve = result.improve;
-        this.tingling = result.tingling;
-        this.swelling = result.swelling;
-        this.redburning = result.redburning;
-        this.ratepain = result.ratepain;
-        this.created_at = result.created_at;
+        this.duration = result.duration || 'Not available';
+        this.activity = result.activity || 'Not available';
+        this.improve = result.improve || 'Not available';
+        this.tingling = result.tingling || 'Not available';
+        this.swelling = result.swelling || 'Not available';
+        this.redburning = result.redburning || 'Not available';
+        this.ratepain = result.ratepain || 'Not available';
+        this.created_at = result.created_at || 'Not available';
       });
   }
 }

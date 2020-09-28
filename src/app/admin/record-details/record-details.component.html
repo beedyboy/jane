@@ -1,20 +1,124 @@
-<p>Record details </p>
+<section class="container">
+  <header>
+    <a href="admin/records">view data</a>
+  </header>
 
-  <!-- <mat-spinner *ngIf="isLoadingResult"></mat-spinner> -->
+  <mat-spinner *ngIf="isLoadingResult"></mat-spinner>
 
+  <div fxLayout="column" fxLayoutAlign="start space-around" fxLayoutGap="2px grid" fxFlexFill class="mat-elevation-z8">
+    <h2>Record details </h2>
 
-<div fxLayout="column wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px grid" fxLayoutWrap
-  fxLayoutAlign="space-between" class="mat-elevation-z8">
+    <section class="section" fxLayout="row" fxLayoutGap="2px grid">
+      <div>
+        <span class="badge"> Gender: </span>
+        <span class="text-muted">{{ gender }} </span>
+      </div>
+      <div>
+        <span class="badge"> DOB: </span>
+        <span class="text-muted">{{ dob }} </span>
+      </div>
 
-  <section fxLayout="row" fxLayoutGap="10px">
-   <span> Gender: {{ gender }} </span>
-   <span> DOB: {{ dob }} </span>
-   </section>
+      <div *ngIf="dob === 'Female'">
+        <span class="badge"> Pregnant: </span>
+        <span class="text-muted">{{ pregnant }} </span>
+      </div>
 
-   <section  fxLayout="row" fxLayoutGap="10px">
-    <span> Tingling: {{ tingling }} </span>
-    <span> Swelling: {{ swelling }} </span>
-    <span> Redburning: {{ redburning }} </span>
+      <div *ngIf="dob === 'Female'">
+        <span class="badge"> Breast feeding: </span>
+        <span class="text-muted">{{ breastfeeding }} </span>
+      </div>
+
     </section>
 
-</div>
+    <section class="section" fxLayout="row" fxLayoutGap="2px grid">
+      <div>
+        <span class="badge"> Smoke: </span>
+        <span class="text-muted">{{ smoke }} </span>
+      </div>
+      <div>
+        <span class="badge"> Fracture: </span>
+        <span class="text-muted">{{ fracture }} </span>
+      </div>
+      <div>
+        <span class="badge"> Activity: </span>
+        <span class="text-muted">{{ activity }} </span>
+      </div>
+
+      <div>
+        <span class="badge"> Improve: </span>
+        <span class="text-muted">{{ improve }} </span>
+      </div>
+
+    </section>
+
+
+    <section class="section" fxLayout="column" fxLayoutGap="2px grid">
+      <h5>Disease</h5>
+      <section fxLayout="row" fxLayoutGap="2px grid">
+        <div>
+          <span class="badge"> Depresion: </span>
+          <span class="text-muted"> {{ disease.depression }}</span>
+        </div>
+        <div>
+          <span class="badge"> Diabetes: </span>
+          <span class="text-muted"> {{ disease.diabetes }}</span>
+        </div>
+        <div>
+          <span class="badge"> Epilepsy: </span>
+          <span class="text-muted"> {{ disease.epilepsy }}</span>
+        </div>
+
+        <div>
+          <span class="badge"> Skin burn: </span>
+          <span class="text-muted"> {{ disease.skinburn }}</span>
+        </div>
+        <div>
+          <span class="badge"> Neck pain: </span>
+          <span class="text-muted"> {{ disease.neckpain }}</span>
+        </div>
+        <div>
+          <span class="badge"> BP: </span>
+          <span class="text-muted"> {{ disease.bp }}</span>
+        </div>
+
+      </section>
+    </section>
+
+    <section class="section" fxLayout="row" fxLayoutGap="2px grid">
+      <div>
+        <span class="badge"> Tingling: </span>
+        <span class="text-muted">{{ tingling }} </span>
+      </div>
+      <div>
+        <span class="badge"> Swelling: </span>
+        <span class="text-muted">{{ swelling }} </span>
+      </div>
+      <div>
+        <span class="badge"> Redburning: </span>
+        <span class="text-muted">{{ redburning }} </span>
+      </div>
+
+    </section>
+
+    <section class="section" fxLayout="row" fxLayoutGap="2px grid">
+      <div>
+        <span class="badge"> Duration: </span>
+        <span class="text-muted">{{ duration }} </span>
+      </div>
+      <div>
+        <span class="badge"> Pain rate: </span>
+        <span class="text-muted">{{ ratepain }} </span>
+      </div>
+      <div>
+        <span class="badge"> Submitted on: </span>
+        <span class="text-muted">{{ created_at }} </span>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2020. All right reserved
+   </footer>
+</section>
